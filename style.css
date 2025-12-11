@@ -1,0 +1,306 @@
+@font-face {
+    font-family: font;
+    src: url('../big_noodle_titling.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: font, sans-serif;
+    position: relative;
+    background-color: #ffffff;
+}
+
+#dataAtual{
+    color: #c4ae2d
+}
+
+header {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #08397d;
+    padding: 2rem;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+main {
+    display: flex;
+    margin: 5vh 10vw 6rem 10vw;
+}
+
+#background{
+    background-color: #08397d;
+    margin: 5vh 10vw 6rem 10vw;
+    border-radius: 1rem;
+}
+
+#text{
+    font-family: font, sans-serif;
+    position: relative;
+    background-color: #ffffff;
+    margin: 5vh 10vw 6rem 10vw;
+}
+
+a {
+    margin: 1rem;
+    color: white;
+    text-decoration: none;
+    padding-top: 4px;
+    color: #c4ae2d;
+}
+
+a:hover {
+    color: rgb(141, 141, 141);
+}
+
+h1, h2 {
+    color: #08397d;
+    font-family: font;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+aside {
+    margin-top: 3rem;
+}
+
+aside, #content > p {
+    color: rgb(141, 141, 141);
+}
+
+#tabela, th, td{
+    font-size: 1.5rem;
+    border: 1px solid black;
+    padding: 6px;
+}
+
+#content{
+    margin: 5vh 10vw 6rem 10vw;
+}
+
+#agende-btn {
+    border: solid 2px #c4ae2d;
+    border-radius: 10rem;
+    padding: 5px;
+    width: 7rem;
+    text-align: center;
+    animation: jump 1s infinite alternate;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+        
+    }
+    100% {
+        transform: translateY(-0.5rem);
+    }
+}
+
+#agende-btn:hover {
+    background-color: #c4ae2d;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+p {
+    color: #08397d;
+    
+}
+
+#footer{
+    font-size: 15px;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 10px;
+    background-color: #08397d;
+    padding: 2rem;
+    color: #c4ae2d;
+    border-radius: 1rem;
+}
+
+
+#locate-section {
+    width: 80%;
+    max-width: 400px;
+    background-color: #c4ae2d;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 0rem 2rem -.1rem rgb(107, 107, 107);
+    text-align: center;
+    animation: jump 1s infinite alternate;
+}
+ol{
+    margin: 5px;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-0.5rem);
+    }
+}
+
+#locate-section > h3, p {
+    font-family: font;
+    font-size: 2rem;
+    color: #08397d;
+    text-align: justify;
+}
+
+.img-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 5rem;  /* AGORA o container desce junto com a bolinha */
+    margin-left: 3rem;
+}
+
+/* BOLINHA */
+.pin {
+    width: 10rem;           
+    height: 10rem;
+
+    background-image: url(./pin.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: absolute;
+    top: -90px;              /* metade do tamanho pra fora */
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 9999;
+}
+
+
+
+/* IMAGEM BALANÇANDO */
+#imgnews {
+    height: 25rem;
+    border-radius: 10%;
+    box-shadow: 0 0rem 2.5rem -.10rem #08397d;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+
+    transform-origin: top center;    /* imagem gira presa na  bolinha */
+    animation: swingImage 2.5s ease-in-out infinite;
+}
+
+/* animação do balançar */
+@keyframes swingImage {
+    0%   { transform: rotate(0deg); }
+    50%  { transform: rotate(2.5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    main {
+        margin: 5vh 5vw 6rem 5vw;
+    }
+
+    h1, h2 {
+        font-size: 2.5rem;
+    }
+
+    img {
+        height: 20rem;
+    }
+    #title{
+        height: auto;
+    }
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto; /* Permite rolagem horizontal */
+        -webkit-overflow-scrolling: touch; /* Melhoria de rolagem para iOS */
+        margin-bottom: 1rem;
+    }
+
+    .tabela {
+        min-width: 700px; 
+        width: 100%;
+        border-collapse: collapse;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    a {
+        margin: 0.5rem;
+    }
+
+    h1, h2 {
+        font-size: 2rem;
+    }
+
+    img {
+        height: 15rem;
+    }
+
+    #locate-section > h3, p {
+        font-size: 1.5rem;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+    #title{
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        margin: 5vh 2vw 6rem 2vw;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    img {
+        height: 6rem;
+    }
+
+    #locate-section > h3, p {
+        font-size: 1.2rem;
+    }
+
+    #agende-btn {
+        width: 5rem;
+        font-size: 0.9rem;
+    }
+    #title{
+        height: auto;
+    }
+}
+
